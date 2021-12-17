@@ -1,16 +1,22 @@
 #!/bin/sh
+################
+# Made by MSz Msz MSz
+# "You know me I came to see "
+# "What secondary structure is to be"
+####################################
 
 # File1=find . -type f -name "*R1_001.fastq.gz"
 # File2=*_R2_001.fastz.gz
 
 FILES=$(find *.fastq.gz)
 Dir=${PWD##*/}
+TRIM=${find ~/Trimmomatic-0.39/ -name "trimmomatic-0.39.jar"}
 
 echo $FILES
 echo $Dir
 
 java \
--jar /data/home/szucsm/211207_A00405_0503_AHLNMFDSX2/1m7_xrn1_deg/trimmomatic-0.39.jar \
+-jar ${TRIM} \
 PE -phred33 \
 $FILES \
 ${Dir}_output_R1_paired.fastq.gz ${Dir}_output_R1_unpaired.fastq.gz \
