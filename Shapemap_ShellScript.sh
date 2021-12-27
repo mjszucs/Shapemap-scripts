@@ -23,13 +23,13 @@ NAME=$0
 MODNAME=${NAME::-3}
 MODNAME_OUT="${NAME::-3}_Out"
 MODNAME_TEMP="${NAME::-3}_temp"
-
+FASTA=$(find . -name "*.fa")
 
 shapemapper \
 --name $MODNAME \
 --out $MODNAME_OUT \
 --temp $MODNAME_TEMP \
---target POWV_3UTR.fa \
+--target $FASTA \
 --verbose \
 --overwrite \
 --min-depth 5000 \
