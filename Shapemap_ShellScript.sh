@@ -20,16 +20,17 @@ set -e # exit on first error (if any)
 
 
 NAME=$0
-MODNAME=${NAME::-3}
-MODNAME_OUT="${NAME::-3}_Out"
-MODNAME_TEMP="${NAME::-3}_temp"
+MODNAME=${NAME:2:-3}
+MODNAME_OUT="${NAME:2:-3}_Out"
+MODNAME_TEMP="${NAME:2:-3}_temp"
 FASTA=$(find . -name "*.fa")
+FASTA_TRIM=${FASTA:2}
 
 shapemapper \
 --name $MODNAME \
 --out $MODNAME_OUT \
 --temp $MODNAME_TEMP \
---target $FASTA \
+--target $FASTA_TRIM \
 --verbose \
 --overwrite \
 --min-depth 5000 \
