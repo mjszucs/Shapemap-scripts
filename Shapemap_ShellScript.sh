@@ -20,11 +20,11 @@ set -e # exit on first error (if any)
 
 
 NAME=$0
-MODNAME=${NAME:2:-3}
-MODNAME_OUT="${NAME:2:-3}_Out"
-MODNAME_TEMP="${NAME:2:-3}_temp"
-FASTA=$(find . -name "*.fa")
-FASTA_TRIM=${FASTA:2}
+MODNAME=${NAME:2:-3} # find the name and trim off stuff
+MODNAME_OUT="${NAME:2:-3}_Out" #make as string that has out
+MODNAME_TEMP="${NAME:2:-3}_temp" #make a string that has temp as the folder
+FASTA=$(find . -name "*.fa") #find the fasta file
+FASTA_TRIM=${FASTA:2} # trim off the beginning
 
 shapemapper \
 --name $MODNAME \
