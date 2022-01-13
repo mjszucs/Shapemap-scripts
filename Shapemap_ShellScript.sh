@@ -8,15 +8,8 @@
 # Saves a bunch of grunt work changing all of the information in the files
 #----------------------------------------------------------------------#
 
-# Run simple ShapeMapper pipeline on a small subset of example data
-#
-
-
 
 set -e # exit on first error (if any)
-
-# Find the parent folder of this script,
-# resolving (possibly nested) symlinks
 
 
 NAME=$0
